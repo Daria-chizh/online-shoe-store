@@ -1,0 +1,3 @@
+export const TOPSALES_REDUCER = 'TOPSALES';
+export const CATEGORIES_REDUCER = 'CATEGORIES';
+export const CATALOG_REDUCER = 'CATALOG';
