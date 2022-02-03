@@ -21,10 +21,6 @@ section {
   margin-top: 2em;
   margin-bottom: 2em;
 }
-
-
-
-
 /* Common Styles */
 /*.invisible {*/
 /*  opacity: 0;*/
@@ -434,9 +430,6 @@ h2, .h2 {
 
 .info-catalog {
   display: inline;
-  /*justify-content: center;*/
-  /*flex-direction: row;*/
-  /*align-items: center;*/
   margin-right: 5px;
   padding: 3px;
   font-weight: normal;
@@ -492,7 +485,6 @@ h2, .h2 {
   font-weight: bold;
 }
 
-
 .form-control {
   width: 300px;
   height: 500px;
@@ -500,5 +492,75 @@ h2, .h2 {
 
 .name-catalog {
   font-size: 30px;
+}
+
+.title-item {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  padding-top: 10px;
+}
+
+.img-item {
+  position: absolute;
+  right: 60%;
+  width: 350px;
+  height: 400px;
+  margin-top: -50px;
+}
+
+.table-bordered {
+  position: relative;
+  left: 48%;
+  margin-top: 20px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 1px solid lightgray;
+}
+
+td {
+  width: 300px;
+  height: 20px;
+  border: 1px solid lightgray;
+  padding-top:15px;
+  text-align: left;
+  vertical-align: middle;
+  padding-left: 20px;
+  font-size: 15px;
+}
+
+.sizes {
+  margin-top: 15px;
+}
+
+.text-center {
+  position: relative;
+  left: 57%;
+}
+
+.btn-group {
+  margin-left: 10px;
+}
+
+.btn-secondary {
+  width: 25px;
+  height: 25px;
+  background-color: lightgray;
+  border: 1px solid lightgray;
+}
+
+.btn-outline-primary {
+ padding: 10px;
+}
+
+.btn-danger {
+  width: 300px;
+  height: 30px;
+  position:absolute;
+  background-color: red;
+  left: 55%;
+  color: white;
+  margin-top: -10px;
+  border: 1px solid red;
 
 }

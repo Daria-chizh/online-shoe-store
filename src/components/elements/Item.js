@@ -1,17 +1,14 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router';
 
-const PageItems = (props) => {
-  const { id, images, sku, manufacturer, color, material, season, reason, size } = props.item;
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+const Item = (props) => {
+  const { title, images, sku, manufacturer, color, material, season, reason, sizes } = props.item;
 
   return (
       <section className="catalog-item">
         <div className="row">
           <div className="col-5"></div>
-          <img src={images} className="img-fluid" alt=""/>
+          <div className="title-item">{title}</div>
+          <img src={images[0]} className="img-item" alt=""/>
         </div>
 
         <div className="col-7">
@@ -51,7 +48,9 @@ const PageItems = (props) => {
       </table>
 
         <div className="text-center">
-          <p>Размеры в наличии: <span className="catalog-item-size selected">{size}</span> <span className="catalog-item-size">20 US</span></p>
+          <p className="sizes">Размеры в наличии:
+            <span className="catalog-item-size selected">{sizes.size}</span>
+            <span className="catalog-item-size">{sizes.size}</span></p>
           <p>Количество: <span className="btn-group btn-group-sm pl-2">
             <button className="btn btn-secondary">-</button>
             <span className="btn btn-outline-primary">1</span>
@@ -65,4 +64,4 @@ const PageItems = (props) => {
   );
 };
 
-export default PageItems;
+export default Item;

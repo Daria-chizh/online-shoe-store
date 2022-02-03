@@ -1,9 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const TopSaleItem = (props) => {
-  const { title, price, images } = props.item;
+  const { id, title, price, images } = props.item;
+  const navigate = useNavigate();
 
   const handleOrder = () => {
+    navigate(`/catalog/${id}.html`);
   };
 
   return (

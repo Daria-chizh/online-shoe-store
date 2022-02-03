@@ -1,9 +1,10 @@
-import { TOPSALES_REDUCER, CATEGORIES_REDUCER, CATALOG_REDUCER } from '../store/reducerNames';
+import { TOPSALES_REDUCER, CATEGORIES_REDUCER, CATALOG_REDUCER, LOADEDITEM_REDUCER } from '../store/reducerNames';
 
 import {
   LOAD_TOPSALES,
   LOAD_CATEGORIES,
   APPEND_CATALOG_ITEMS, LOAD_CATALOG_ITEMS,
+  LOAD_PAGE_ITEM
 } from "./actionTypes";
 
 // actions for reducers with fetcher part
@@ -23,6 +24,10 @@ export function fetchError(reducerName, error) {
 
 export function loadTopSales(items) {
   return { type: LOAD_TOPSALES, payload: items };
+}
+
+export function loadPageItem(items) {
+  return { type: LOAD_PAGE_ITEM, payload: items };
 }
 
 // simple actions for category list reducer
@@ -81,5 +86,12 @@ export function fetchCategories() {
   return createFetchLikeThumbFn(CATEGORIES_REDUCER, async (dispatch) => {
     const items = await fetch('http://localhost:7070/api/categories').then((response) => response.json());
     dispatch(loadCategories([{ id: null, title: 'Все' }, ...items]));
+  });
+}
+
+export function fetchItem(id) {
+  return createFetchLikeThumbFn(LOADEDITEM_REDUCER, async (dispatch) => {
+    const items = await fetch(`http://localhost:7070/api/items/${id}`).then((response) => response.json());
+    dispatch(loadPageItem(items));
   });
 }

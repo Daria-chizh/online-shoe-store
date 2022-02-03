@@ -8,7 +8,7 @@ import CatalogList from "./CatalogList";
 export default function Catalog(props) {
   const dispatch = useDispatch();
 
-  const { search } = props; // props
+  const { search } = props;
 
   const [activeId, setActiveId] = useState();
 
