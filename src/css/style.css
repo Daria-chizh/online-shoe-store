@@ -188,6 +188,7 @@ section {
   background: #727e86;
   border-radius: 15px;
   color: #fff;
+  margin-left: 10px;
 }
 
 .catalog-search-form {
@@ -504,9 +505,9 @@ h2, .h2 {
 .img-item {
   position: absolute;
   right: 60%;
-  width: 350px;
-  height: 400px;
-  margin-top: -50px;
+  width: 280px;
+  max-height: 300px;
+  margin-top: 0;
 }
 
 .table-bordered {
