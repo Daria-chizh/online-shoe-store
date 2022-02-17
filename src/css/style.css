@@ -56,8 +56,8 @@ section {
 }
 .header-controls-cart-full {
   position: absolute;
-  right: -10px;
-  top: -5px;
+  right: 35px;
+  top: 0;
   display: block;
   height: 21px;
   width: 21px;

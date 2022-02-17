@@ -1,14 +1,14 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 
-
 import logo from '../../img/header-logo.png';
 import card from '../../img/card.png';
 import find from '../../img/find.png';
+import {getCart} from "../../storage/cart";
 
-
-export default function Menu() {
+export default function Menu(props) {
   const navigate = useNavigate();
+  const items = getCart();
 
   const handleCart = () => {
     navigate('/cart.html');
@@ -24,11 +24,11 @@ export default function Menu() {
 
         <div className="header-controls-pics">
           <div data-id="search-expander" class="header-controls-pic header-controls-search"></div>
-          <div class="header-controls-pic header-controls-cart">
-            <div class="header-controls-cart-full">1</div>
-            <div class="header-controls-cart-menu"></div>
-            <span><img src={card} className="logo" onClick={handleCart}/></span>
-          </div>
+          <span><img src={card} className="logo" onClick={handleCart}/></span>
+          { items.length !== 0 ?
+            <div class="header-controls-pic header-controls-cart">
+              <div class="header-controls-cart-full">{ items.length}</div>
+            </div> : null }
         </div>
 
         <span><img src={find} className="logo"/></span>
