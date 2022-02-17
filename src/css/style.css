@@ -563,5 +563,46 @@ td {
   color: white;
   margin-top: -10px;
   border: 1px solid red;
+}
+.cart-container {
+  text-align: center;
+}
 
+.cart {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.cart-table {
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.cart-table > table {
+  border-collapse: collapse;
+  border: 1px solid lightgray;
+}
+
+.number {
+  width: 5%;
+}
+
+.count,
+.size,
+.price-th,
+.total-th,
+.action-th {
+  width: 10%;
+}
+
+.cancel {
+  border: 1px solid red;
+  background-color: #FFFFFF;
+  color: red;
+}
+
+.total-cost {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
 }
