@@ -564,11 +564,13 @@ td {
   margin-top: -10px;
   border: 1px solid red;
 }
-.cart-container {
+.cart-container,
+.checkout-container  {
   text-align: center;
 }
 
-.cart {
+.cart,
+.checkout {
   font-size: 20px;
   font-weight: bold;
 }
@@ -605,4 +607,49 @@ td {
   margin-top: 20px;
   font-size: 20px;
   font-weight: bold;
+}
+
+.data {
+  text-align: center;
+}
+
+.telephone {
+  margin-right: 240px;
+  margin-top: 20px;
+}
+
+.address {
+  margin-right: 180px;
+  margin-top: 20px;
+}
+
+.telephone-field,
+.address-field {
+  width: 300px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.checkbox-container {
+  margin-left: -55px;
+  margin-top: 10px;
+}
+
+.send-form {
+  width: 100px;
+  height: 30px;
+  margin-right: 205px;
+  margin-top: 15px;
+  background-color: #FFFFFF;
+  border: 1px solid darkgray;
+  color: darkgray;
+}
+
+.checkout-form {
+  border: 1px solid darkgray;
+  width: 350px;
+  height: 270px;
+  margin-left: auto;
+  margin-right:auto;
+  margin-top: 30px;
 }

@@ -1,19 +1,21 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
-import { CATALOG_REDUCER, CATEGORIES_REDUCER, TOPSALES_REDUCER, LOADEDITEM_REDUCER } from './reducerNames';
+import { CATALOG_REDUCER, CATEGORIES_REDUCER, TOPSALES_REDUCER, LOADEDITEM_REDUCER, CHECKOUT_REDUCER } from './reducerNames';
 
 import createFetcherLikeReducer from '../reducers/fetchLikeReducerFactory';
 import topSalesReducer from '../reducers/topSalesReducer';
 import categoriesReducer from "../reducers/categoriesReducer";
 import catalogItemsReducer from "../reducers/catalogItemsReducer";
 import loadedItemReducer from "../reducers/loadedItemReducer";
+import checkoutReducer from "../reducers/checkoutReducer";
 
 const reducer = combineReducers({
   topSales: createFetcherLikeReducer(topSalesReducer, TOPSALES_REDUCER),
   catalogItems: createFetcherLikeReducer(catalogItemsReducer, CATALOG_REDUCER),
   categories: createFetcherLikeReducer(categoriesReducer, CATEGORIES_REDUCER),
   loadedItem: createFetcherLikeReducer(loadedItemReducer, LOADEDITEM_REDUCER),
+  checkout: createFetcherLikeReducer(checkoutReducer, CHECKOUT_REDUCER),
 });
 
 const store = createStore(

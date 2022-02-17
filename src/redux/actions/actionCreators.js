@@ -1,10 +1,10 @@
-import { TOPSALES_REDUCER, CATEGORIES_REDUCER, CATALOG_REDUCER, LOADEDITEM_REDUCER } from '../store/reducerNames';
+import { TOPSALES_REDUCER, CATEGORIES_REDUCER, CATALOG_REDUCER, LOADEDITEM_REDUCER, CHECKOUT_REDUCER } from '../store/reducerNames';
 
 import {
   LOAD_TOPSALES,
   LOAD_CATEGORIES,
   APPEND_CATALOG_ITEMS, LOAD_CATALOG_ITEMS,
-  LOAD_PAGE_ITEM
+  LOAD_PAGE_ITEM, LOAD_CHECKOUT
 } from "./actionTypes";
 
 // actions for reducers with fetcher part
@@ -44,6 +44,11 @@ export function loadCatalogItems(items) {
 
 export function appendCatalogItems(items) {
   return { type: APPEND_CATALOG_ITEMS, payload: { items } };
+}
+
+//  simple actions for checkout reducer
+export function loadCheckout(items) {
+  return { type: LOAD_CHECKOUT, payload: { items } };
 }
 
 // complex actions
@@ -93,5 +98,12 @@ export function fetchItem(id) {
   return createFetchLikeThumbFn(LOADEDITEM_REDUCER, async (dispatch) => {
     const items = await fetch(`http://localhost:7070/api/items/${id}`).then((response) => response.json());
     dispatch(loadPageItem(items));
+  });
+}
+
+export function fetchCheckout() {
+  return createFetchLikeThumbFn(CHECKOUT_REDUCER, async (dispatch) => {
+    const items = await fetch('http://localhost:7070/api/order').then((response) => response.json());
+    dispatch(loadCheckout(items));
   });
 }
