@@ -1,19 +1,21 @@
 import React from "react";
+import { useDispatch } from 'react-redux';
 
-import { getCart, saveCart } from '../../../storage/cart';
+import { removeItemFromCart } from '../../../redux/actions/actionCreators'
 
 export default function CartItem(props) {
-  const { index, item: { title, selectedSize, count, price } } = props;
+  const dispatch = useDispatch();
+
+  const { index, item } = props;
+  const { title, selectedSize, count, price } = item;
 
   const onRemoveItem = () => {
-    const items = getCart();
-    const updatedItems = items.filter((item) => item.title !== title || item.selectedSize !== selectedSize);
-    saveCart(updatedItems);
+    dispatch(removeItemFromCart(item));
   };
 
   return (
     <tr>
-      <td >{index + 1}</td>
+      <td>{index + 1}</td>
       <td>{title}</td>
       <td>{selectedSize}</td>
       <td>{count}</td>

@@ -1,10 +1,11 @@
 import React from 'react';
-import CartItem from "./CartItem";
+import { useSelector } from 'react-redux';
 
-import { getCart } from '../../../storage/cart';
+import CartItem from "./CartItem";
+import CheckoutForm from "./CheckoutForm";
 
 const Cart = () => {
-  const items = getCart();
+  const cart = useSelector((state) => state.cart);
 
   return (
     <section className="cart-items">
@@ -24,30 +25,17 @@ const Cart = () => {
               <th className="total-th">Итого</th>
               <th className="action-th">Действия</th>
             </tr>
-            {items.map((item, idx) => <CartItem item={item} index={idx} />)}
+            {cart.map((item, idx) => <CartItem item={item} index={idx} key={idx} />)}
           </tbody>
         </table>
-        <div className="total-cost">Общая стоимость: {items.reduce((sum, item) => sum + item.count * item.price, 0)} руб.</div>
+        <div className="total-cost">Общая стоимость: {cart.reduce((sum, item) => sum + item.count * item.price, 0)} руб.</div>
       </div>
 
       <div className="checkout-container">
         <span className="checkout">Оформить заказ</span>
       </div>
 
-      <form className="checkout-form">
-        <div className="data">
-          <div className="telephone">Телефон</div>
-          <input type="number" className="telephone-field" placeholder="Ваш телефон"/>
-          <div className="address">Адрес доставки</div>
-          <input type="text" className="address-field" placeholder="Адрес доставки"/>
-
-          <div className="checkbox-container">
-          <input type="checkbox" className="checkbox"/>
-          <span>Согласен с правиласи доставки</span>
-          </div>
-          <button className="send-form">Оформить</button>
-        </div>
-      </form>
+      <CheckoutForm />
     </section>
   );
 };

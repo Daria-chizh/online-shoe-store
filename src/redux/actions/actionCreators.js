@@ -4,7 +4,8 @@ import {
   LOAD_TOPSALES,
   LOAD_CATEGORIES,
   APPEND_CATALOG_ITEMS, LOAD_CATALOG_ITEMS,
-  LOAD_PAGE_ITEM, LOAD_CHECKOUT
+  LOAD_PAGE_ITEM,
+  ADD_ITEM_TO_CART, REMOVE_ITEM_FROM_CART, CLEAR_CART
 } from "./actionTypes";
 
 // actions for reducers with fetcher part
@@ -18,6 +19,20 @@ export function fetchDone(reducerName) {
 
 export function fetchError(reducerName, error) {
   return { type: `FETCH_${reducerName}_DONE`, payload: { error } };
+}
+
+// simple actions for cart reducer
+
+export function addItemToCart(item) {
+  return { type: ADD_ITEM_TO_CART, payload: item };
+}
+
+export function removeItemFromCart(item) {
+  return { type: REMOVE_ITEM_FROM_CART, payload: item };
+}
+
+export function cleanCart(item) {
+  return { type:CLEAR_CART, payload: item };
 }
 
 // simple actions for top-sales reducer
@@ -44,11 +59,6 @@ export function loadCatalogItems(items) {
 
 export function appendCatalogItems(items) {
   return { type: APPEND_CATALOG_ITEMS, payload: { items } };
-}
-
-//  simple actions for checkout reducer
-export function loadCheckout(items) {
-  return { type: LOAD_CHECKOUT, payload: { items } };
 }
 
 // complex actions
@@ -101,9 +111,19 @@ export function fetchItem(id) {
   });
 }
 
-export function fetchCheckout() {
-  return createFetchLikeThumbFn(CHECKOUT_REDUCER, async (dispatch) => {
-    const items = await fetch('http://localhost:7070/api/order').then((response) => response.json());
-    dispatch(loadCheckout(items));
+export function doCheckout(owner, items) {
+  return createFetchLikeThumbFn(CHECKOUT_REDUCER, async () => {
+    const body = { owner, items };
+    fetch(`http://localhost:7070/api/order`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
   });
 }
+
+
+

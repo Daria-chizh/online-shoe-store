@@ -1,24 +1,16 @@
 import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
-import { getCart, saveCart } from '../../storage/cart'
-
-const addItemToCart = (items, newItem) => {
-  const existingItem = items.find((item) => newItem.title === item.title && newItem.selectedSize === item.selectedSize);
-  if (existingItem) {
-    existingItem.count += newItem.count;
-    return items;
-  }
-
-  items.unshift(newItem);
-  return items;
-};
+import { addItemToCart } from '../../redux/actions/actionCreators'
 
 const Item = (props) => {
-  const { title, images, sku, manufacturer, color, material, price, season, reason, sizes } = props.item;
-  const [selectedSize, setSelectedSize] = useState();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [selectedSize, setSelectedSize] = useState();
   const [count, setCount] = useState(1);
+
+  const { id, title, images, sku, manufacturer, color, material, price, season, reason, sizes } = props.item;
 
   const onSelectSize = (size) => {
     setSelectedSize(size);
@@ -37,10 +29,7 @@ const Item = (props) => {
   };
 
   const handleCart = () => {
-    const items = getCart();
-    const updatedItems = addItemToCart(items, { title, selectedSize, count, price });
-    saveCart(updatedItems);
-
+    dispatch(addItemToCart({ id, title, selectedSize, count, price }));
     navigate('/cart.html');
   };
 

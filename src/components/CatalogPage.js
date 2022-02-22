@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Catalog from "./elements/catalog/Catalog";
 import Banner from "./common/Banner";
 import CatalogTitle from "./common/CatalogTitle";

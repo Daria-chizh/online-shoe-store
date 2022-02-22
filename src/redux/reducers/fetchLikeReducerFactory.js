@@ -8,7 +8,7 @@ export default function extendReducer(reducerFn, reducerName) {
       case `FETCH_${reducerName}_ERROR`:
         return { ...state, loading: false, error: String(action?.payload?.error || 'Unknown error') };
       default:
-        return reducerFn(state, action);
+        return reducerFn ? reducerFn(state, action) : (state || {});
     }
   };
 }

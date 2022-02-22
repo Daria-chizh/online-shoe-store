@@ -1,14 +1,14 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import logo from '../../img/header-logo.png';
 import card from '../../img/card.png';
 import find from '../../img/find.png';
-import {getCart} from "../../storage/cart";
 
-export default function Menu(props) {
+export default function Menu() {
   const navigate = useNavigate();
-  const items = getCart();
+  const cart = useSelector((state) => state.cart);
 
   const handleCart = () => {
     navigate('/cart.html');
@@ -23,12 +23,13 @@ export default function Menu(props) {
       <div className="symbols">
 
         <div className="header-controls-pics">
-          <div data-id="search-expander" class="header-controls-pic header-controls-search"></div>
+          <div data-id="search-expander" className="header-controls-pic header-controls-search"></div>
           <span><img src={card} className="logo" onClick={handleCart}/></span>
-          { items.length !== 0 ?
-            <div class="header-controls-pic header-controls-cart">
-              <div class="header-controls-cart-full">{ items.length}</div>
-            </div> : null }
+          {
+            cart.length !== 0
+              ? <div className="header-controls-pic header-controls-cart"><div className="header-controls-cart-full">{ cart.length}</div></div>
+              : null
+          }
         </div>
 
         <span><img src={find} className="logo"/></span>
