@@ -31,7 +31,7 @@ export function removeItemFromCart(item) {
   return { type: REMOVE_ITEM_FROM_CART, payload: item };
 }
 
-export function cleanCart(item) {
+export function clearCart(item) {
   return { type:CLEAR_CART, payload: item };
 }
 

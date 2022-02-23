@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { doCheckout } from "../../../redux/actions/actionCreators";
-const dispatch = useDispatch();
+import {doCheckout, clearCart} from "../../../redux/actions/actionCreators";
 
 const CheckoutForm = () => {
+  const dispatch = useDispatch();
   const { checkout: { loading, error }, cart } = useSelector((state) => ({ checkout: state.checkout, cart: state.cart }));
 
   const [address, setAddress] = useState();
@@ -16,6 +16,10 @@ const CheckoutForm = () => {
 
   const onSendForm = () => {
     dispatch(doCheckout({ phone: number, address }, cart));
+  };
+
+  const onCleanCart = () => {
+    dispatch(clearCart(cart));
   };
 
   if (loading) {
@@ -38,7 +42,7 @@ const CheckoutForm = () => {
           <input type="checkbox" className="checkbox"/>
           <span>Согласен с правилами доставки</span>
         </div>
-        <button className="send-form">Оформить</button>
+        <button className="send-form" onClick={onCleanCart}>Оформить</button>
       </div>
     </form>
   );
