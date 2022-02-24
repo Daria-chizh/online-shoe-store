@@ -654,4 +654,35 @@ td {
   margin-top: 30px;
 }
 
+.title-info {
+  font-weight: bold;
+}
+.data-info {
+  margin-top:10px;
+}
 
+.info,
+.delivery,
+.send,
+.call-number,
+.contact-email {
+  max-width: 1200px;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.telephone-info {
+  color: black;
+  font-weight: bold;
+}
+
+.link-info {
+  color: black;
+  margin-top:10px;
+}
+
+.social-links {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}

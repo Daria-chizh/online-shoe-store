@@ -32,7 +32,7 @@ export function removeItemFromCart(item) {
 }
 
 export function clearCart(item) {
-  return { type:CLEAR_CART, payload: item };
+  return { type: CLEAR_CART, payload: item };
 }
 
 // simple actions for top-sales reducer

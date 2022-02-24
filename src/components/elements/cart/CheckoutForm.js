@@ -16,9 +16,6 @@ const CheckoutForm = () => {
 
   const onSendForm = () => {
     dispatch(doCheckout({ phone: number, address }, cart));
-  };
-
-  const onCleanCart = () => {
     dispatch(clearCart(cart));
   };
 
@@ -42,7 +39,7 @@ const CheckoutForm = () => {
           <input type="checkbox" className="checkbox"/>
           <span>Согласен с правилами доставки</span>
         </div>
-        <button className="send-form" onClick={onCleanCart}>Оформить</button>
+        <button className="send-form">Оформить</button>
       </div>
     </form>
   );

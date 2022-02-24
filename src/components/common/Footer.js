@@ -40,9 +40,12 @@ export default function Footer() {
           <a className="footer-contacts-email" href="mailto:office@bosanoga.ru">office@bosanoga.ru</a>
           <div className="footer-social-links">
             <div className="footer-social-link footer-social-link-twitter">
-              <img src={twitter} />
+              <a href="https://twitter.com/"><img src={twitter} /></a>
             </div>
-            <div className="footer-social-link footer-social-link-vk"><img src={vk}/></div>
+
+            <div className="footer-social-link footer-social-link-vk">
+              <a href="https://vk.com/"><img src={vk} /></a>
+            </div>
           </div>
         </div>
       </div>
