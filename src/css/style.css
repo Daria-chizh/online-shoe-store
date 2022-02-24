@@ -665,7 +665,9 @@ td {
 .delivery,
 .send,
 .call-number,
-.contact-email {
+.contact-email,
+.social-links,
+.about-shop {
   max-width: 1200px;
   margin: 3rem auto;
   text-align: center;
@@ -681,8 +683,37 @@ td {
   margin-top:10px;
 }
 
-.social-links {
-  max-width: 1200px;
-  margin: auto;
-  text-align: center;
+.about {
+  text-align: justify;
+  margin-top: 10px;
+}
+
+.second,
+.third,
+.forth {
+  margin-left: 70px;
+}
+
+.images-shop {
+  border-bottom: 4px solid red;
+  margin-top: 40px;
+}
+
+.text {
+  width: 250px;
+  margin-top: 20px;
+}
+
+.shop-container {
+  display: flex;
+}
+
+.total-info {
+  margin-top: 50px;
+  font-weight: bold;
+}
+
+.main-text {
+  margin-top: 20px;
+  text-align: justify;
 }

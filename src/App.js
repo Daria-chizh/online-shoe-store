@@ -6,6 +6,7 @@ import CatalogPage from './components/CatalogPage';
 import ItemPage from './components/ItemPage';
 import Cart from './components/elements/cart/Cart';
 import ContactsPage from "./components/ContactsPage";
+import AboutShopPage from "./components/AboutShopPage";
 
 export default function App() {
   return (
@@ -19,10 +20,10 @@ export default function App() {
             <Route path="/catalog/:id.html" element={<ItemPage />} />
             <Route path="/cart.html" element={<Cart />} />
             <Route path="/contacts.html" element={<ContactsPage />} />
+            <Route path="/about.html" element={<AboutShopPage />} />
           </Routes>
         </div>
       </div>
     </Router>
   );
 }
-

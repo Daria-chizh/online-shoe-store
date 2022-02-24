@@ -39,7 +39,6 @@ export default function ContactsPage() {
           </div>
         </div>
 
-
         <div className="social-links">
           <div className="footer-social-link footer-social-link-twitter">
             <a href="https://twitter.com/"><img src={twitter} /></a>
