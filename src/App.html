@@ -15,9 +15,9 @@
 
 <body>
 <header class="container">
-    <div class="row">
-        <div class="col">
-            <nav class="navbar navbar-expand-sm navbar-light bg-light">
+<!--    <div class="row">-->
+<!--        <div class="col">-->
+<!--            <nav class="navbar navbar-expand-sm navbar-light bg-light">-->
 <!--                <a class="navbar-brand" href="/">-->
 <!--                    <img src="src/img/header-logo.png" alt="Bosa Noga">-->
 <!--                </a>-->
@@ -55,7 +55,7 @@
 
 <!--        </div>-->
 <!--    </div>-->
-<!--</header>-->
+</header>
 
 <!--<main class="container">-->
 <!--    <div class="row">-->
@@ -161,20 +161,19 @@
 <!--    </div>-->
 <!--</footer>-->
 
-<script>
-  // TODO: replace it with React!
-  const searchEl = document.querySelector('[data-id=search-expander]');
-  const searchFormEl = document.querySelector('[data-id=search-form]');
-  searchEl.addEventListener('click', () => {
-    searchFormEl.classList.toggle('invisible');
-    searchFormEl.querySelector('input').focus();
-  });
-</script>
-                        <script type="text/babel" src="./js/Menu.js"></script>
-                        <script type="text/babel" src="./js/HomePage.js"></script>
-                        <script type="text/babel" src="./js/Catalog"></script>
-                        <script type="text/babel" src="./js/AboutShop"></script>
-                        <script type="text/babel" src="./js/Contacts"></script>
+    <script>
+      // TODO: replace it with React!
+      const searchEl = document.querySelector('[data-id=search-expander]');
+      const searchFormEl = document.querySelector('[data-id=search-form]');
+      searchEl.addEventListener('click', () => {
+        searchFormEl.classList.toggle('invisible');
+        searchFormEl.querySelector('input').focus();
+      });
+    </script>
+    <script type="text/babel" src="./js/Menu.js"></script>
+    <script type="text/babel" src="./js/HomePage.js"></script>
+    <script type="text/babel" src="./js/Catalog"></script>
+    <script type="text/babel" src="./js/AboutShop"></script>
+    <script type="text/babel" src="./js/Contacts"></script>
 </body>
-
 </html>

@@ -1,4 +1,4 @@
-import { TOPSALES_REDUCER, CATEGORIES_REDUCER, CATALOG_REDUCER, LOADEDITEM_REDUCER, CHECKOUT_REDUCER } from '../store/reducerNames';
+import { TOPSALES_REDUCER, CATEGORIES_REDUCER, CATALOG_REDUCER, LOADEDITEM_REDUCER } from '../store/reducerNames';
 
 import {
   LOAD_TOPSALES,
@@ -110,20 +110,3 @@ export function fetchItem(id) {
     dispatch(loadPageItem(items));
   });
 }
-
-export function doCheckout(owner, items) {
-  return createFetchLikeThumbFn(CHECKOUT_REDUCER, async () => {
-    const body = { owner, items };
-    fetch(`http://localhost:7070/api/order`, {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(body)
-    });
-  });
-}
-
-
-

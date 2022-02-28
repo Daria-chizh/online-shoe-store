@@ -717,3 +717,18 @@ td {
   margin-top: 20px;
   text-align: justify;
 }
+
+.container-not-found {
+  max-width: 1200px;
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.text-mistake {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.number-mistake {
+  font-size: 100px;
+}

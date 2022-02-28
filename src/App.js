@@ -7,6 +7,7 @@ import ItemPage from './components/ItemPage';
 import Cart from './components/elements/cart/Cart';
 import ContactsPage from "./components/ContactsPage";
 import AboutShopPage from "./components/AboutShopPage";
+import NotFound from "./components/NotFound"
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
             <Route path="/cart.html" element={<Cart />} />
             <Route path="/contacts.html" element={<ContactsPage />} />
             <Route path="/about.html" element={<AboutShopPage />} />
+            <Route path='*' element={<NotFound />} />
           </Routes>
         </div>
       </div>
