@@ -71,9 +71,8 @@ section {
 }
 .header-controls-search-form {
   max-width: 1200px;
-  margin: 3rem auto;
-  top: calc(50% - -100px);
-  width: 100%;
+  margin: 0.5rem auto;
+  /*top: calc(50% - -90px);*/
   height: 38px;
   padding: 0 20px;
   background: #FFFFFF;
@@ -90,7 +89,6 @@ section {
   outline: none;
   box-shadow: none;
 }
-
 
 /* Banner */
 .banner {
@@ -732,3 +730,11 @@ td {
 .number-mistake {
   font-size: 100px;
 }
+
+.find {
+  position: relative;
+  left: 300px;
+  top: 10px;
+}
+
+
